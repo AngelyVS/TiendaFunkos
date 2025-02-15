@@ -1,0 +1,334 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('imagenes/fondo.jpg') ;
+    object-fit: cover;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#0C1440;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 3px solid #8e8f8e;
+}
+
+#cart-icon {
+   background-color: #f30f0f00;
+   border: none;
+  
+    
+}
+#icono-carrito{
+    height: 35px;
+    width: 35px;
+    background-color: #007bff00;
+
+    
+}
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+
+nav .search-bar input {
+    padding: 0.5rem;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+}
+
+nav .cart-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.dropdown img{
+    height: 30px;
+    width: 30px;
+}
+
+nav .dropdown .dropbtn {
+    background-color: #33333300;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 5px;
+    
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0a083acd;
+    backdrop-filter: blur(4px);
+    min-width: 110px;
+    padding: 4px ;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 88%;
+    border-radius: 7px;
+}
+.dropdown-content a {
+    margin-top: 10px; 
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: chartreuse;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 130px;
+    width: 50px;
+    padding: 12px;
+}
+/* Carrusel 3D */
+.slider-container {
+    width: 80%;
+    max-width: 1100px;
+    height: 510px;
+    perspective: 1800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+.slide {
+    position: absolute;
+    width: 45%;
+    height: 340px;
+    left: 50%;
+    top: 50%;
+    margin-left: -20%;
+    margin-top: -150px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+
+.frontside, .backside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    padding: 0.8rem;
+}
+
+.product-image {
+    width: 70%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+    height: 70%; /* Asegura que la imagen ocupe todo el alto del contenedor */
+    object-fit: cover; /* Hace que la imagen se recorte o ajuste proporcionalmente para llenar el espacio */
+    border-radius: 10px; /* Opcional: redondear bordes */
+}
+.frontside h2{
+    font-size: larger;
+    margin: 5px;
+}
+.frontside p{
+    font-size: medium;
+    margin: 5px;
+    margin-bottom: 15px;
+}
+
+.frontside {
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.backside {
+    background-color: #007bff;
+    color: white;
+    transform: rotateY(180deg);
+}
+.boton-añadir{
+    border-radius: 20px;
+    padding: 6px;
+    width: 120px;
+    font-size: small;
+    border: none;
+    background-color: #404a5c;
+    color: white;
+    cursor: pointer;
+}
+.boton-añadir:hover{
+    background-color: #F2F2F2;
+    color:#203a6a ;
+}
+
+.nav-buttons-slider {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.button {
+    background-color: #F2F2F2;
+    color: #013440;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background-color: #404a5c;
+    color: #F2F2F2;
+}
+
+.desplazar{
+    height: 25px;
+    margin: 4px;
+
+}
+
+/* Carrito */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 320px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.cart-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart ul {
+    list-style-type: none;
+}
+
+/*Estilos del botón cerrar*/
+#boton-close{
+    background-color: #dc3545;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    margin-left: 245px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Estilo para los botones de disminuir dentro del carrito */
+.boton-delete {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 4px;
+    background-color: #465e8b ;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+  .boton-delete:hover{
+    background-color: #f1808c;
+  }
+  
+  #boton-clean{
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    border: none;
+    background-color: #404a5c;
+    color: white;
+  }
+
+  .cart button:hover {
+    background-color: #c82333;
+  }
+  
+
+#boton-finish {
+    padding: 0.8rem;
+    background-color: #203a6a ;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+#boton-finish:hover {
+    background-color:#626975;
+}
+
+/* Footer */
+
+footer {
+    background-color: #0C1440;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 15%;
+    border-top: 3px solid #8e8f8e;
+}
+
+footer .social-media {
+    margin-bottom: 1rem;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkolandia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+       
+        <div class="logo">Funkolandia</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar Funko..." id="search" oninput="filterProducts()">
+
+        </div>
+        <div class="cart-menu">
+            <button id="cart-icon" onclick="toggleCart()">
+                <img src="imagenes/carrito.png" alt="" id="icono-carrito">
+            </button>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <img src="imagenes/menu.png" alt="">
+                </button>
+                <div class="dropdown-content">
+                    <a href="formularioRegistro.html">Registrarme</a>
+                    <a href="formularioContacto.html">Contácto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel 3D -->
+    <div class="slider-container">
+        <div class="slider" id="slider"></div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="nav-buttons-slider">
+        <button class="button" onclick="rotateSlider(72)">
+            <img src="imagenes/desplazar1.png" alt="" class="desplazar">
+             Siguiente</button>
+        <button class="button" onclick="rotateSlider(-72)">
+            Anterior
+            <img src="imagenes/desplazar2.png" alt="" class="desplazar">
+        </button>
+    </div>
+
+    <!-- Carrito de Compras -->
+    <div id="cart" class="cart">
+        <button onclick="toggleCart()" id="boton-close">x</button>
+
+        <div class="cart-content">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items">
+                <!-- Productos del carrito se añadirán aquí -->
+            </ul>
+            <p id="cart-total">Total: $0.00</p>
+            <button onclick="vaciarCarrito()" id="boton-clean">Vaciar Carrito</button>
+            <button onclick="checkout()" id="boton-finish">Finalizar Compra</button>
+           
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2024 Funkolandia. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
